@@ -32,8 +32,15 @@ public class MainActivity extends FragmentActivity {
     if (savedInstanceState == null) {
       FragmentTransaction transaction = getSupportFragmentManager()
           .beginTransaction();
-      // BluetoothReceiverFragment fragment = BluetoothReceiverFragment.newInstance();
+
+
+      /********************************************************************************
+      * Make sure you comment out one of the two following fragments
+      * depending on what kind of device you are deploying to
+      */
+      //BluetoothReceiverFragment fragment = BluetoothReceiverFragment.newInstance();
       BluetoothRemoteFragment fragment = BluetoothRemoteFragment.newInstance();
+      /********************************************************************************/
       transaction.replace(R.id.content_fragment, fragment);
       transaction.commit();
     }
